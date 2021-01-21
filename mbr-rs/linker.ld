@@ -1,0 +1,1 @@
+../mbr-target/linker.ld

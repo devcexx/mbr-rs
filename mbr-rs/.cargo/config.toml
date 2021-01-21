@@ -1,0 +1,9 @@
+[build]
+target = "../mbr-target/i386-unknown-none-mbr.json"
+
+# LLVM Align parameters: prevent LLVM to align functions by default, 
+# as we're looking for small binary size over performance
+rustflags = ["--emit", "asm", "-C", "llvm-args=-align-all-functions=1 -align-all-blocks=1 -align-all-nofallthru-blocks=1"]
+
+[unstable]
+build-std = ["core", "alloc"]
